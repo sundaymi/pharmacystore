@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import dotenv, os
+import os , dotenv 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'pharmacystore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pharmacystore',
-        'USER' : 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.environ['DATABASE_NAME'],
+        'USER' : os.environ['DATABASE_USER'],
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
+        'HOST': os.environ['DATABASE_HOST'],
+        'PORT': os.environ['DATABASE_PORT'],
     }
 }
 
