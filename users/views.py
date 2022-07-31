@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import User
+from django.http import HttpResponse
+import datetime
 
 # Create your views here.
 
@@ -18,3 +20,9 @@ def delete_user(request):
 def update_user(request):
     pass  
 
+
+
+def index(request):
+    current_date = datetime.date.today("Y")  
+    html = "<html><body><b>Current Date and Time Value:</b> %s</body></html>" % current_date
+    return HttpResponse(html)
