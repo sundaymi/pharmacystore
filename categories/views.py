@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Category
+from django.shortcuts import render, redirect 
+from .models import Category 
 # Create your views here.
 
 
