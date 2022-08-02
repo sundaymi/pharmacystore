@@ -35,3 +35,28 @@ class RegisterSaleMenForm(forms.Form):
 class LoginForm(forms.Form):
     email_login = forms.EmailField()
     password_login = forms.CharField(widget=forms.PasswordInput())
+    
+
+class UpdateUserForm(forms.Form):
+    pass 
+
+
+class DeleteUserForm(forms.Form): 
+    pass 
+
+
+class UpdatePharmasistForm(forms.Form):
+    pass 
+
+
+class DeletPharmasistForm(forms.Form):
+    pass 
+
+
+class UpdateSalemenForm(forms.Form):
+    pass 
+
+
+class DeleteSalemenForm(forms.Form):
+    pass 
+
