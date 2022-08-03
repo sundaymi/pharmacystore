@@ -18,7 +18,7 @@ class User(models.Model):
     
     
     def __str__(self):
-        return self.first_name
+        return self.first_name, self.last_name
     
    
 class SaleMen(models.Model):
@@ -32,7 +32,10 @@ class SaleMen(models.Model):
     sm_city = models.CharField(max_length=70) 
     sm_tk = models.IntegerField()
     sm_phone= models.IntegerField() 
-    sm_afm = models.IntegerField() 
+    sm_afm = models.IntegerField()  
+    
+    def __str__(self):
+        return self.first_name, self.last_name
     
     
 class Pharmasist(models.Model):
@@ -48,5 +51,8 @@ class Pharmasist(models.Model):
     p_tk = models.IntegerField()
     p_phone = models.IntegerField() 
     sm_id = models.ForeignKey(SaleMen, on_delete=models.CASCADE)
-    drug_id = models.ManyToManyField(Drug) 
+    drug_id = models.ManyToManyField(Drug)  
+    
+    def __str__(self):
+        return self.first_name, self.last_name
     
