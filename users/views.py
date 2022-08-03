@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import User
+from django.shortcuts import render, redirect 
+from .models import User, Pharmasist, SaleMen
 from django.http import HttpResponse
 import datetime
 from .forms import RegisterUserForm, RegisterPharmasistForm, RegisterSaleMenForm
@@ -9,14 +9,19 @@ from .forms import RegisterUserForm, RegisterPharmasistForm, RegisterSaleMenForm
 def user_profile(requests,pk):
     profile = User.objects.get(pk=pk) 
     
+    
 def user_profile_list(requests):
     profiles = Profile.objects.exclude(user=request.user) 
 
 def create_user(request):
+    name1 = User.first_name
+    name2 = User.last_name
     form_user = RegisterUserForm(request.POST or None) 
     if request.method == 'POST':
         if form_user.is_valid():
             form_user.save()
+            page = f"Welcome {self.name1, self.name2} to Pharmastore" 
+            
             
 
 def delete_user(request):
