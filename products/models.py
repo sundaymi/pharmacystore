@@ -13,4 +13,7 @@ class Drug(models.Model):
     stock = models.IntegerField()
     date_expiration = models.DateField() 
     categ_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    manuf_id = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
+    manuf_id = models.ForeignKey(Manufacturer, on_delete=models.CASCADE) 
+    
+    def __str__(self):
+        return self.d_name
